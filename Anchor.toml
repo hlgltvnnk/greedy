@@ -1,0 +1,47 @@
+[toolchain]
+
+[features]
+seeds = false
+skip-lint = false
+
+[programs.localnet]
+greedy_solana = "GREEd3qyRDkKMeWZ6Kw7pf1FvcgBdNgpJQ7oxQ7Sq4H3"
+
+[programs.devnet]
+greedy_solana = "GREEd3qyRDkKMeWZ6Kw7pf1FvcgBdNgpJQ7oxQ7Sq4H3"
+
+[programs.mainnet]
+greedy_solana = "GREEd3qyRDkKMeWZ6Kw7pf1FvcgBdNgpJQ7oxQ7Sq4H3"
+
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = "/Users/capola/.config/solana/id.json"
+
+[scripts]
+test = "yarn run jest state && yarn run jest sale && yarn run jest participant"
+
+[test]
+upgradeable = true
+startup_wait = 10000
+
+[test.validator]
+bind_address = "0.0.0.0"
+url = "https://api.mainnet-beta.solana.com"
+ledger = ".anchor/test-ledger"
+rpc_port = 8899
+
+# Metaplex program id
+[[test.validator.clone]]
+address = "metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s"
+
+# Pump swap program id
+[[test.validator.clone]]
+address = "pAMMBay6oceH9fJKBRHGP5D4bD4sWpmSwMn52FMfXEA"
+
+# Pump swap global config pda
+[[test.validator.clone]]
+address = "ADyA8hdefvWN2dbGGWFotbzWxrAvLW83WG6QCVXvJKqw"

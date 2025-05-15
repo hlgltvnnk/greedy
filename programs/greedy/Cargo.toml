@@ -1,0 +1,33 @@
+[package]
+name = "greedy-solana"
+version = "0.1.2"
+authors = ["HAPI <devs@hapi.one>"]
+license = "MIT"
+license-file = "../../LICENSE"
+description = "Solana implementation of Greedy contract"
+repository = "https://github.com/HAPIprotocol/hapi-core"
+homepage = "https://hapi.one"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+name = "greedy_solana"
+
+[features]
+testing = []
+idl-build = ["anchor-lang/idl-build", "anchor-spl/idl-build"]
+no-entrypoint = []
+no-idl = []
+no-log-ix-name = []
+cpi = ["no-entrypoint"]
+default = []
+anchor-debug = []
+
+[dependencies]
+anchor-lang = { version = "0.31.1", features = ["init-if-needed"] }
+anchor-spl = { version = "0.31.1", features = ["metadata"] }
+spl-token-metadata-interface = "0.3.3"
+pumpswap-sdk = "1.0.2"
+
+uuid = "1.3.4"
+
