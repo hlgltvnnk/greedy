@@ -98,6 +98,59 @@ npm run participate-in-sale <SALE_ID> <AMOUNT> <CLAIM_HOUR>
 npm run update-multiplier <SALE_ID> <AMOUNT> <CLAIM_HOUR>
 ```
 
+# Greedy Solana backend
+
+Rust backend for interaction with Greedy contract.
+Includes 2 services:
+- Indexer (for fetching sales)
+- Shcheduler (for app creation)
+
+## Setup
+
+It is required to set configuration before start. Define config file in CONFIG_PATH env variable.
+Or set env variables - example [here](.env.example).
+Configuration file must contain fields:
+
+```toml
+log_level                           # Log level for the application layer, default: info
+is_json_logging                     # Whether to use JSON logging, default: true
+wait_interval_ms                    # The number of milliseconds between wait checks
+
+[rpc]:                              # Rpc configurations
+rpc_node_url                        # The RPC node URL
+signer                              # Signer keypair
+contract_address                    # Greedy Core contract address
+fetching_delay                      # The number of milis between fetching iterations
+page_size                           # Page size for fetching data
+
+[database]:                         # Signing keypair string
+host:                               # Database host
+port:                               # Database port
+user                                # Database user
+password                            # Database password
+name                                # Database name
+ca_cert                             # Path to database CA certificate file (optional)
+run_migrations                      # Run database migrations [default: true]
+```
+
+To update migration folder path udpate MIGRATIONS_PATH env.
+To run in dev mode - set DEV_MODE env to 1.
+
+
+## Usage
+
+To run service in indexer mode:
+
+```sh
+cargo run indexer
+```
+
+To run service in scheduler mode:
+
+```sh
+cargo run scheduler
+```
+
 ## Test locally:
 
 1. Start local validator with Metaplex and Pump amm programs:

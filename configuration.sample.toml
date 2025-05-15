@@ -1,0 +1,15 @@
+log_level = "info"
+is_json_logging = true
+
+[rpc]
+rpc_node_url = "https://api.devnet.solana.com"
+contract_address = "Be1tUaMkbDZEX65BgXHNwh7wrNRWUwNH92ggsB8UuLJd"
+signer = ""
+
+[database]
+host = "localhost"
+port = 5243
+user = "dboperator"
+password = "operatorpass123"
+name = "postgres"
+run_migrations = true
