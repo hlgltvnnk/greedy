@@ -1,0 +1,25 @@
+@layer components {
+  .footer-mobile {
+    z-index: 2;
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    @apply flex w-full bg-paper rounded-t-2xl border border-default-border;
+    padding: 8px 2px;
+    box-shadow: 0px 4px 0px 0px var(--color-default-border);
+
+    @media (min-width: 581px) {
+      display: none !important;
+    }
+
+    .nav-label {
+      display: none;
+      font-size: 12px;
+    }
+    .nav-active {
+      .nav-label {
+        display: block;
+      }
+    }
+  }
+}

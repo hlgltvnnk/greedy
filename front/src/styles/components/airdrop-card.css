@@ -1,0 +1,117 @@
+@layer components {
+  .airdrop-card {
+    position: relative;
+    @apply flex flex-col items-center gap-4 w-full h-full p-4 bg-card rounded-2xl border border-default-border cursor-pointer;
+    @media (min-width: 1024px) {
+      @apply flex flex-row items-center gap-16 w-full h-full p-4 bg-card rounded-2xl border border-default-border cursor-pointer;
+    }
+
+    @media (max-width: 1024px) {
+      .badge {
+        padding: 2px 8px;
+      }
+    }
+  }
+
+  .airdrop-card__header {
+    @apply min-w-[200px] flex-grow-0;
+  }
+}
+
+@layer components {
+  .sale-card {
+    @apply grid w-full h-full p-4 bg-card rounded-2xl border border-default-border cursor-pointer gap-4;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'header header'
+      'status greed'
+      'locked claimable'
+      'button button';
+
+    @media (min-width: 1280px) {
+      grid-template-columns: 315px 1fr 1fr 1fr 1fr 180px;
+      grid-template-rows: auto;
+      grid-template-areas: 'header status greed locked claimable button';
+      gap: 16px;
+      padding: 16px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: 54px 24px 24px 24px 24px 1fr;
+      grid-template-areas:
+        'header'
+        'status'
+        'greed'
+        'locked'
+        'claimable'
+        'button';
+    }
+  }
+
+  .sale-card-created {
+    @apply grid w-full h-full p-4 bg-card rounded-2xl border border-default-border cursor-pointer gap-4;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      'header header'
+      'status status'
+      'participants participants'
+      'raised raised'
+      'progress progress'
+      'button button';
+
+    @media (min-width: 1280px) {
+      grid-template-columns: 300px auto auto auto 294px 180px;
+      grid-template-rows: auto;
+      grid-template-areas: 'header status participants raised progress button';
+      gap: 16px;
+      padding: 16px;
+    }
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-template-areas:
+        'header'
+        'status'
+        'participants'
+        'raised'
+        'progress'
+        'button';
+    }
+  }
+
+  .sale-card__header {
+    grid-area: header;
+    @apply flex flex-row items-center gap-4;
+  }
+  .sale-card__section {
+    @apply flex flex-col justify-center gap-1;
+  }
+  .sale-card__status {
+    grid-area: status;
+  }
+  .sale-card__greed {
+    grid-area: greed;
+  }
+  .sale-card__locked {
+    grid-area: locked;
+  }
+  .sale-card__claimable {
+    grid-area: claimable;
+  }
+  .sale-card__button {
+    grid-area: button;
+  }
+  .sale-card__participants {
+    grid-area: participants;
+  }
+  .sale-card__raised {
+    grid-area: raised;
+  }
+  .sale-card__progress {
+    grid-area: progress;
+  }
+}

@@ -1,0 +1,58 @@
+@layer components {
+  .primary-button {
+    @apply cursor-pointer bg-primary p-4 rounded-2xl text-center font-primary;
+    box-shadow: 0px 4px 0px 0px var(--color-default-border);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .primary-button:active,
+  .primary-button:hover {
+    @apply bg-[#992800];
+    box-shadow: 0px 6px 0px 0px var(--color-default-border);
+  }
+  .primary-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* ------------------------------ */
+  .secondary-button {
+    @apply cursor-pointer bg-secondary-button font-secondary text-sm/[100%] p-4 border border-default-border flex items-center justify-center rounded-2xl;
+    box-shadow: 0px 4px 0px 0px var(--color-default-border);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .secondary-button:active,
+  .secondary-button:hover {
+    box-shadow: 0px 6px 0px 0px var(--color-default-border);
+    opacity: 0.8;
+  }
+
+  /* ------------------------------ */
+  .secondary-light-button {
+    @apply cursor-pointer bg-secondary-light-button font-primary text-sm/[100%] p-4 border border-default-border flex items-center justify-center rounded-2xl text-black-text;
+    box-shadow: 0px 4px 0px 0px var(--color-default-border);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .secondary-light-button:active,
+  .secondary-light-button:hover {
+    @apply bg-[#FFFFFF];
+  }
+  .secondary-light-button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+
+  /* ------------------------------ */
+  .open-pool-button {
+    @apply flex items-center bg-[#87EFAC] justify-center h-[54px] px-4 gap-2 rounded-[16px] border border-[#030201] font-normal text-lg text-[#030201] transition-all whitespace-nowrap duration-200 disabled:opacity-50 disabled:cursor-not-allowed;
+    box-shadow: 0px 4px 0px 0px var(--color-default-border);
+  }
+
+  .open-pool-button:active,
+  .open-pool-button:hover {
+    box-shadow: 0px 6px 0px 0px var(--color-default-border);
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,88 @@
+@layer components {
+  .distribution-page {
+    .distribution-page-image {
+      background-image: url('./../../../images/home-top_mobile.png');
+      background-size: cover;
+      background-position: center center;
+      background-repeat: no-repeat;
+      @apply relative flex flex-col items-center justify-center h-[132px] w-full max-w-[358px] rounded-lg;
+      min-height: 138px;
+      height: 138px;
+
+      .distribution-page-text {
+        display: none;
+      }
+
+      @media (min-width: 768px) {
+        background-image: url('./../../../images/home-top.png');
+        background-position: 90% center;
+        @apply relative flex flex-col items-center justify-center w-full max-w-[1256px];
+
+        .distribution-page-text {
+          display: block;
+          @apply absolute top-[40px] left-[40px] flex flex-col;
+          gap: calc(var(--spacing) * 3);
+        }
+
+        min-height: 160px;
+        height: 160px;
+
+        .distribution-page-text {
+          @apply absolute top-[40px] left-[40px] flex flex-col;
+          gap: calc(var(--spacing) * 3);
+        }
+
+        /* top: 0; */
+        h2 {
+          @apply text-[30px];
+        }
+      }
+
+      @media (min-width: 1256px) {
+        min-height: 201px;
+        height: 201px;
+
+        .distribution-page-text {
+          @apply absolute top-[58px] left-[56px] flex flex-col;
+          gap: calc(var(--spacing) * 3);
+        }
+
+        h2 {
+          @apply text-[40px];
+        }
+      }
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 1256px;
+
+      .distribution-page-text--mobile {
+        @apply lg:hidden;
+      }
+    }
+
+    .distribution-page-text--mobile {
+      @apply flex flex-col items-center justify-center h-[132px] w-[358px] text-center;
+      margin-top: -16px;
+
+      h2 {
+        @apply text-[25px];
+      }
+
+      p {
+        @apply text-[14px];
+        color: var(--color-secondary-text);
+        width: 80%;
+      }
+    }
+
+    .airdrop-section {
+      max-width: 1256px;
+      @apply flex flex-col w-full gap-4;
+    }
+
+    @media (max-width: 580px) {
+      padding-bottom: 16px;
+    }
+  }
+}

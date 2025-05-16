@@ -1,0 +1,41 @@
+@theme {
+  --font-primary: 'Unbounded', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+
+  --color-background: #0f181b;
+  --color-paper: #142024;
+  --color-card: #1d2f34;
+  --color-container-light: #21343b;
+  --color-container-dark: #0f181b;
+
+  --color-primary: #b93709;
+
+  --color-success: #77e550;
+  --color-danger: #ffa41c;
+  --color-fail: #ef3e00;
+  --color-hapi: #fdee2d;
+
+  --color-primary-button: var(--color-primary);
+  --color-secondary-button: #263d45;
+  --color-secondary-light-button: #b7cfd7;
+
+  --color-secondary-text: #96b9c5;
+  --color-black-text: #030201;
+
+  --color-default-border: #030201;
+
+  --color-token-name-bg: #2f4d55;
+  --color-token-name-text: #96b9c5;
+}
+
+.Toastify__toast--success {
+  --toastify-color-success: #77e550;
+}
+
+.Toastify__toast--warning {
+  --toastify-color-warning: #ffa41c;
+}
+
+.Toastify__toast--error {
+  --toastify-color-error: #ef3e00;
+}

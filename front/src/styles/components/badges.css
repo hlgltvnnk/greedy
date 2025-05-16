@@ -1,0 +1,21 @@
+@layer components {
+  .badge {
+    @apply flex items-center justify-center w-fit h-fit px-3 py-1 rounded-[20px] text-black-text font-secondary font-bold text-[10px];
+  }
+
+  .badge--success {
+    @apply bg-success;
+  }
+
+  .badge--danger {
+    @apply bg-danger;
+  }
+
+  .badge--completed {
+    @apply bg-[#6FA1AF];
+  }
+
+  .badge--failed {
+    @apply bg-[#EF3E00] text-white;
+  }
+}

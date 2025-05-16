@@ -1,0 +1,42 @@
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    @apply h-full w-full bg-background text-white overflow-x-hidden overflow-y-auto;
+    font-size: 16px;
+  }
+
+  body {
+    @apply w-full h-full font-primary overflow-x-hidden overflow-y-auto;
+  }
+
+  #root {
+    @apply w-full min-h-screen flex flex-col overflow-y-visible relative;
+  }
+
+  button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+
+  /* Scrollbar */
+  *::-webkit-scrollbar {
+    width: 6px;
+  }
+  *::-webkit-scrollbar-track {
+    background: #142024;
+    border-radius: 16px;
+  }
+  *::-webkit-scrollbar-thumb {
+    background-color: #21343b;
+    border-radius: 16px;
+  }
+  *::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+}

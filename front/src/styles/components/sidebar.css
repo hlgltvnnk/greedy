@@ -1,0 +1,23 @@
+@layer components {
+  .sidebar-app {
+    position: absolute;
+    z-index: 1;
+    @apply flex p-4 w-[88px] max-w-[88px] min-w-[88px] bg-paper rounded-2xl border border-default-border;
+    height: calc(100% - 64px);
+    box-shadow: 0px 4px 0px 0px var(--color-default-border);
+    transition: all 0.2s ease-in-out;
+
+    @media (max-width: 1024px) {
+      position: fixed;
+      height: calc(100% - 64px - 54px);
+    }
+    @media (max-width: 580px) {
+      display: none;
+    }
+  }
+  .sidebar-app--open {
+    @apply w-[264px] max-w-[264px] min-w-[264px];
+    box-shadow: 32px 0px 16px 0px #030201a3;
+    transition: all 0.2s ease-in-out;
+  }
+}

@@ -1,0 +1,14 @@
+@layer components {
+  .header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 16px;
+    z-index: 2;
+
+    @media (min-width: 581px) {
+      display: none !important;
+    }
+
+  }
+}

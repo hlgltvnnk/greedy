@@ -1,0 +1,66 @@
+@layer components {
+  .hapi-score {
+    @apply w-full px-4 py-3 rounded-2xl bg-hapi text-default-border border border-default-border overflow-hidden;
+  }
+  .hapi-score-sidebar {
+    @apply mt-auto px-2 items-center justify-center;
+  }
+
+  .hapi-score-content {
+    @apply flex gap-3;
+  }
+
+  .hapi-score-sidebar p,
+  .hapi-score-sidebar button,
+  .hapi-score-sidebar .hapi-score-title,
+  .hapi-score-sidebar .hapi-score-content--max,
+  .hapi-score-sidebar .hapi-score-content--current,
+  .hapi-score-sidebar .hapi-score-content--label {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .hapi-score-sidebar .hapi-score-content--label,
+  .hapi-score-sidebar--closed .hapi-score-content--refresh,
+  .hapi-score-sidebar--closed .hapi-score-content--current,
+  .hapi-score-sidebar--closed .hapi-score-content--current--value,
+  .hapi-score-sidebar--closed .hapi-score-content--max,
+  .hapi-score-sidebar--closed .hapi-score-title {
+    display: none;
+    opacity: 0;
+  }
+
+  .hapi-score-sidebar--closed .hapi-score-content--current--value,
+  .hapi-score-sidebar--closed .hapi-score-content--label {
+    display: block;
+    opacity: 1;
+  }
+
+  .hapi-score-title,
+  .hapi-score-content--max, 
+  .hapi-score-content--refresh {
+    @apply flex opacity-100;
+  }
+  .hapi-score-content p {
+    @apply flex flex-row items-center justify-center;
+  }
+  .hapi-score-sidebar--closed .hapi-score-content p {
+    @apply flex-col gap-1;
+  }
+  .hapi-score-content--label {
+    font-size: 10px;
+    text-align: center
+  }
+
+  .hapi-score-footer {
+    @apply flex items-center justify-between h-[56px] p-1;
+  }
+  .hapi-score-footer .hapi-score-title,
+  .hapi-score-footer .hapi-score-content--refresh,
+  .hapi-score-footer .hapi-score-content--max,
+  .hapi-score-footer .hapi-score-content--current {
+    @apply hidden;
+  }
+  .hapi-score-footer .hapi-score-content--current--value {
+    @apply block;
+  }
+}
